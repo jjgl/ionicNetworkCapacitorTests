@@ -1,0 +1,7 @@
+{
+  "name": "networkDetection",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
