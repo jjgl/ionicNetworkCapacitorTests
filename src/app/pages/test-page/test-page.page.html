@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  [routerLink]="['/home']" text='Back'  ></ion-back-button> 
+    </ion-buttons>
+    <ion-title>test-page</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button [routerLink]="['/home']" >Home</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <h1>Connection status: {{statusOnline ? "Online" : "Offline"}}</h1>
+    
+    <p>See more Ionic content at <a href="https://developer.school">developer.school</a></p>
+  </div>
+</ion-content>
