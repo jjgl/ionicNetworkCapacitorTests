@@ -1,6 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
-import { IonItem } from '@ionic/angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 const { Network } = Plugins;

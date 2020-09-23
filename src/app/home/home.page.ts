@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
 
 const { Network } = Plugins;
@@ -13,6 +13,7 @@ export class HomePage implements OnInit, OnDestroy {
   networkListenerHome: PluginListenerHandle;
 
   async ngOnInit() {
+    console.log('Home Init')
     this.networkListenerHome = Network.addListener('networkStatusChange', (status) => {
       console.log("Home Page Network status changed", status);
       this.networkStatus = status;
@@ -22,6 +23,11 @@ export class HomePage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.onDestroy()
+  }
+
+  @HostListener('window:beforeunload')
+  onDestroy() {
     console.log('home destroyed')
     this.networkListenerHome.remove();
   }
