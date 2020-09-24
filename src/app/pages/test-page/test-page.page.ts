@@ -21,6 +21,7 @@ export class TestPagePage implements OnInit, OnDestroy {
       console.log('TEST: network change, status:', status);
     })
   }
+  
   @HostListener('unloaded')
   ngOnDestroy() { 
     console.log('test destroyed')

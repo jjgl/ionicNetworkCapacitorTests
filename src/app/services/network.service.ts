@@ -13,7 +13,7 @@ export enum ConnectionStatus {
   providedIn: 'root'
 })
 
-export class NetworkService implements OnDestroy {
+export class NetworkService {
 
   private netStatus: BehaviorSubject<ConnectionStatus> = new BehaviorSubject(ConnectionStatus.Offline);
   networkStatus: NetworkStatus;
@@ -42,11 +42,5 @@ export class NetworkService implements OnDestroy {
   public getCurrentNetworkStatus(): ConnectionStatus {
     return this.netStatus.getValue();
   }
-
-  ngOnDestroy(): void {
-    console.log('services destroyed')
-    this.networkListener.remove();
-  }
-
 
 }
