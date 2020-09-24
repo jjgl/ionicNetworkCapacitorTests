@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar [color]="networkStatus && networkStatus.connected ? 'primary' : 'dark'">
+  <ion-toolbar [color]="statusOnline ? 'primary' : 'dark'">
     <ion-title>
       Network Detection
     </ion-title>
@@ -11,7 +11,8 @@
 
 <ion-content>
   <div class="ion-padding">
-    <h1>Connection status: {{networkStatus && networkStatus.connected ? "Online" : "Offline"}}</h1>
+    <!--<h1>Connection status: {{networkStatus && networkStatus.connected ? "Online" : "Offline"}}</h1>-->
+    <h1>Connection status: {{statusOnline ? "Online" : "Offline"}}</h1>
     
     <p>See more Ionic content at <a href="https://developer.school">developer.school</a></p>
   </div>

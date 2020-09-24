@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NetstatusService } from 'src/app/services/netstatus.service';
 import { ConnectionStatus } from 'src/app/services/network.service';
@@ -22,7 +22,8 @@ export class TestappcomponentPage implements OnInit {
       console.log('TESTAppComp: network change, status:', status);
     })
   }
-
+  
+  @HostListener('ionViewDidLeave')
   ngOnDestroy() { 
     console.log('test app comp destroyed')
     this.subscription.unsubscribe()

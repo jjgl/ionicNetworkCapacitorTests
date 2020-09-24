@@ -21,8 +21,9 @@ export class TestPagePage implements OnInit, OnDestroy {
       console.log('TEST: network change, status:', status);
     })
   }
-  
-  @HostListener('unloaded')
+
+  //@HostListener('unloaded')
+  @HostListener('ionViewDidLeave')
   ngOnDestroy() { 
     console.log('test destroyed')
     this.subscription.unsubscribe()
